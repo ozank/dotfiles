@@ -1,4 +1,24 @@
 ""Ozan'in vim configurasyon dosyasi
+
+" Plugins will be downloaded under the specified directory.
+" https://github.com/junegunn/vim-plug/wiki/tutorial
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'lervag/vimtex'
+
+" https://castel.dev/post/lecture-notes-1/
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+
 set nocompatible
 syntax on  "Enables syntax highlighting for programming languages
 filetype on "Detect file type
@@ -27,7 +47,7 @@ setglobal spell spelllang=en_gb
  set guifont=Monospace\ 11
 
 "Set leader to comma
-let mapleader = ","
+"let mapleader = ","
 
 "Word wrap
 set wrap
@@ -54,23 +74,10 @@ inoremap jj <ESC>
 nnoremap j gj
 nnoremap k gk
 
-"Latex-box ayarlari
-"http://www.charlietanksley.net/philtex/vim-for-latex-part-3/
-set smartindent
-let g:LatexBox_viewer = 'okular'
-let g:LatexBox_latexmk_options = '-pvc'
-let b:main_tex_file = '../Ozan_Thesis.tex'
-"ref patterni autorefi dahil etmek icin degistir
-let LatexBox_ref_pattern = '\c\\\a*ref\*\?\_\s*{'
-"Ctrl=X Ctrl+o'yu remap et
-inoremap <c-space> <c-x><c-o>
-"Texsuite kaldirildi
-"Use pdflatex in tex-suite
-"let g:Tex_DefaultTargetFormat='pdf'
 
 "Latex Suite Auto Complete and other settings
 "http://vim-latex.sourceforge.net/documentation/latex-suite/recommended-settings.html
-filetype plugin on
+"filetype plugin on
 "set shellslash
 "let g:tex_flavor='latex'
 "set grepprg=grep\ -nH\ $*
@@ -86,6 +93,4 @@ filetype plugin on
 "save with HOME in insert mode
 :inoremap <HOME> <c-o>:w<cr>
 
-"Pathogen icin gerekli
-"execute pathogen#infect()
 
