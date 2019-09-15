@@ -1,4 +1,4 @@
-""Ozan'in vim configurasyon dosyasi
+""Ozan'in VIM configurasyon dosyası
 
 " Plugins will be downloaded under the specified directory.
 " https://github.com/junegunn/vim-plug/wiki/tutorial
@@ -7,7 +7,9 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'tpope/vim-sensible'
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-fugitive'
 
+"Zathura ve Vimtex Ayarları (Latex compilation)
 " https://castel.dev/post/lecture-notes-1/
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -74,18 +76,15 @@ inoremap jj <ESC>
 nnoremap j gj
 nnoremap k gk
 
+"Swap file directory definition
+" https://vi.stackexchange.com/questions/177/what-is-the-purpose-of-swap-files
+" https://medium.com/@Aenon/vim-swap-backup-undo-git-2bf353caa02f
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
 
-"Latex Suite Auto Complete and other settings
-"http://vim-latex.sourceforge.net/documentation/latex-suite/recommended-settings.html
-"filetype plugin on
-"set shellslash
-"let g:tex_flavor='latex'
-"set grepprg=grep\ -nH\ $*
-"set sw=2
-"let g:Tex_Folding=0 "I don't like folding.
-"set iskeyword+=
-"
-"
+
+
 "SAVE KISAYOLLAR
 "focus kaybolunca autosave yap
 "gecici olarak devre disi birakildi
