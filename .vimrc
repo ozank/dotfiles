@@ -1,4 +1,4 @@
-""Ozan'in VIM configurasyon dosyası
+"wwwOzan'in VIM configurasyon dosyası
 
 " Plugins will be downloaded under the specified directory.
 " https://github.com/junegunn/vim-plug/wiki/tutorial
@@ -88,7 +88,7 @@ set undodir=/tmp//
 "SAVE KISAYOLLAR
 "focus kaybolunca autosave yap
 "gecici olarak devre disi birakildi
-":au FocusLost * silent! wa
+:au FocusLost * silent! wa
 "save with HOME in insert mode
 :inoremap <HOME> <c-o>:w<cr>
 
