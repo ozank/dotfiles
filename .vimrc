@@ -1,4 +1,4 @@
-"wwwOzan'in VIM configurasyon dosyası
+"Ozan'in VIM configurasyon dosyası
 
 " Plugins will be downloaded under the specified directory.
 " https://github.com/junegunn/vim-plug/wiki/tutorial
@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 
 "Zathura ve Vimtex Ayarları (Latex compilation)
 " https://castel.dev/post/lecture-notes-1/
@@ -83,11 +85,11 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
-
+"Use System Clipboard for copy and paste
+set clipboard=unnamedplus
 
 "SAVE KISAYOLLAR
 "focus kaybolunca autosave yap
-"gecici olarak devre disi birakildi
 :au FocusLost * silent! wa
 "save with HOME in insert mode
 :inoremap <HOME> <c-o>:w<cr>
